@@ -1,8 +1,11 @@
 const getAllActivities = require("../controllers/getActivitiesController");
-
+const { Activity } = require("../db");
 //recibe info por body
 const postActivitie = (req, res) => {
-	res.status(200).send("here you will add an activitie");
+	const activitie = req.body;
+	try {
+		res.status(200).send("here you will add an activitie");
+	} catch (error) {}
 };
 
 //recibne info por query
