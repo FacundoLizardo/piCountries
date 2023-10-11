@@ -53,3 +53,12 @@
     text-align: center;
     
   }
+
+  .inputPage{
+    width: 50px;
+    height: 40px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+   
+  }
