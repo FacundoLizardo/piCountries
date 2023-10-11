@@ -77,7 +77,7 @@ export const Paginacion = ({page, setPage, cantidadDePaginas}) => {
         </button>
 
         <p className={styles.parrafoPaginacion}>Pagina {page} de {cantidadDePaginas}</p>
-        <input onChange={changePage}  type='search'/>
+        
        
         <button className={styles.buttonPages} onClick={nextPage}>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -87,6 +87,8 @@ export const Paginacion = ({page, setPage, cantidadDePaginas}) => {
                 <path d="M13 6l6 6"></path>
             </svg>
         </button>
+
+        <input onChange={changePage}  type='search' placeholder='Page' className={styles.inputPage}/>
     </div>
   )
 }
