@@ -7,16 +7,16 @@ module.exports = (sequelize) => {
 		"Country",
 		{
 			id: {
-				type: DataTypes.STRING(3), // Código de tres letras
+				type: DataTypes.STRING(3),
 				allowNull: false,
-				primaryKey: true, // Hace que el código sea la clave primaria
+				primaryKey: true,
 			},
 			nombre: {
 				type: DataTypes.STRING,
 				allowNull: false,
 			},
 			bandera: {
-				type: DataTypes.STRING, // URL o ruta a la imagen de la bandera
+				type: DataTypes.STRING,
 				allowNull: false,
 			},
 			continente: {

@@ -6,10 +6,8 @@ const sendDataToDb = async () => {
 		const countries = await dataFromApi();
 
 		await Country.bulkCreate(countries);
-
-		console.log("Se cargaron los paises a la base de datos");
 	} catch (error) {
-		console.log(error.message);
+		throw new Error(error.message);
 	}
 };
 
