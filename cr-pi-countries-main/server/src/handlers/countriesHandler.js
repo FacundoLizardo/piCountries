@@ -4,9 +4,6 @@ const {
 	getCountryByNameController,
 } = require("../controllers/countriesController");
 
-//los handlers se encargan de recibir la request y enviar la respuesta e invoca al controller(que es una funcion)
-//el handler nunca interactua nunca con fuentes externas
-
 const getCountrieByIdHandler = async (req, res) => {
 	try {
 		const { id } = req.params;
@@ -20,15 +17,16 @@ const getCountrieByIdHandler = async (req, res) => {
 
 const getCountriesHandler = async (req, res) => {
 	const { name } = req.query;
-	console.log(name);
+
 	try {
 		const result = name
 			? await getCountryByNameController(name)
 			: await getAllCountriesController();
 		if (!result[0]) return res.status(404).send("Pais no encontrado");
+
 		res.status(200).json(result);
 	} catch (error) {
-		res.status(404).send(error.message);
+		res.status(404).send({ error: error.message });
 	}
 };
 

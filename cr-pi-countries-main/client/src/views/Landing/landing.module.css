@@ -1,0 +1,34 @@
+.mainContainer{
+    /* margin: 0px;
+    padding: 0px;
+    background-image: url("../../imagen/countries.png"); ;
+    background-color: rgb(30, 33, 36);
+    object-fit: cover;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    height: 600px; */
+
+    background-image: url("../../imagen/countries.png");
+    background-color: rgb(30, 33, 36);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+
+button{
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+
+    
+}
