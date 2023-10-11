@@ -1,0 +1,113 @@
+.mainContainer {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: bisque;
+    margin: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.Activity{
+    background-color: aquamarine;
+    border-style: solid;
+    border-color: black;
+    padding: 5px;
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.Dificultad{
+    background-color: rgb(238, 246, 166);
+    border-style: solid;
+    border-color: black;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.Duracion{
+    background-color: rgb(149, 245, 194);
+    border-style: solid;
+    border-color: black;
+    margin: 15px;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.Temporada{
+    background-color: rgb(245, 149, 149);
+    border-style: solid;
+    border-color: black;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.search{
+  
+    background-color: rgb(252, 185, 109);
+    border-style: solid;
+    border-color: black;
+    margin: 15px;
+    padding: 8px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.searchCountries{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: auto;
+    max-width: 100%;;
+    border-style: solid;
+    border-color: black;
+    margin: 15px;
+    padding: 8px;
+    border-radius: 15px;
+   align-items: auto;
+   background-color: #737373;
+   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.input{
+
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.customselect {
+    
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 200px;
+    appearance: none; 
+    transition: ease-in-out 1s; 
+    
+  }
+
+  .customselect option {
+    /* Personaliza el aspecto de las opciones */
+    background-color: #ffffff;
+    color: #000;
+  }
+
+  .customselect:focus {
+    
+    background-color: #007bff;
+}
+
+.span{
+    margin-left: 40px;
+}

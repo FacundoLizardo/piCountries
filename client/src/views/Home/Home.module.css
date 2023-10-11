@@ -1,0 +1,12 @@
+.mainContainer {
+    margin: 20px;
+    margin-top: 5px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    background-color: rgb(191, 220, 245);
+    border-style: solid;
+    border-radius: 15px;
+    border-color: black;
+    height: 640px;
+}
