@@ -60,34 +60,42 @@ export async function searchCountriesForm(payload) {
 export async function postActivity(activity) {
 	try {
 		if (activity.countryId.length === 1) {
-			const id = activity.countryId[0];
-			activity.countryId = id;
+			try {
+				const id = activity.countryId[0];
+				activity.countryId = id;
 
-			const { data } = await axios.post(
-				"http://localhost:3001/activities",
-				activity
-			);
-
-			return {
-				type: SET_ACTIVITY,
-				payload: data,
-			};
-		} else if (activity.countryId.length >= 2) {
-			activity.countryId.map(async (id) => {
-				const actividad = { ...activity, countryId: id };
 				const { data } = await axios.post(
 					"http://localhost:3001/activities",
-					actividad
+					activity
 				);
 
 				return {
 					type: SET_ACTIVITY,
 					payload: data,
 				};
-			});
+			} catch (error) {
+				window.alert("Error: Error en la informacion proporcionada");
+			}
+		} else if (activity.countryId.length >= 2) {
+			try {
+				activity.countryId.map(async (id) => {
+					const actividad = { ...activity, countryId: id };
+					const { data } = await axios.post(
+						"http://localhost:3001/activities",
+						actividad
+					);
+
+					return {
+						type: SET_ACTIVITY,
+						payload: data,
+					};
+				});
+			} catch (error) {
+				window.alert("Error: Error en la informacion proporcionada");
+			}
 		}
 	} catch (error) {
-		window.alert(error.message);
+		window.alert("Error: Error en la informacion proporcionada");
 	}
 }
 
@@ -202,16 +210,17 @@ export function orderMayMen(value) {
 	}
 }
 
-export function clearHome(value) {
+export const clearHome = () => async (dispatch) => {
 	try {
-		return {
+		const response = await axios.get(`http://localhost:3001/countries`);
+		dispatch({
 			type: CLEAR_HOME,
-			payload: value,
-		};
+			payload: response.data,
+		});
 	} catch (error) {
 		throw new Error(error.message);
 	}
-}
+};
 
 export function resetForm(data) {
 	console.log("hola");
