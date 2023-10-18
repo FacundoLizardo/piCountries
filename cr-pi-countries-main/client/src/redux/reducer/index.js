@@ -102,7 +102,9 @@ export function rootReducer(state = initialState, action) {
 		case CLEAR_HOME:
 			return {
 				...state,
-				buscados: action.payload,
+				buscados: [],
+				backUpCountries: [],
+				countries: action.payload,
 			};
 
 		case GET_ACTIVITIES:
@@ -112,6 +114,21 @@ export function rootReducer(state = initialState, action) {
 			};
 
 		case FILTER_BY_ACTIVITY:
+			if (state.buscados.length === 0 && state.backUpCountries.length === 0) {
+				state.backUpCountries = [...state.countries];
+			}
+			if (state.buscados.length === 0) {
+				const countriesFiltrados = state.countries.filter((country) => {
+					return country.Activities.some(
+						(activity) => activity.nombre === action.payload
+					);
+				});
+
+				return {
+					...state,
+					countries: [...countriesFiltrados],
+				};
+			}
 			if (state.backUpCountries.length === 0) {
 				state.backUpCountries = state.buscados;
 			}
@@ -128,6 +145,19 @@ export function rootReducer(state = initialState, action) {
 			};
 
 		case FILTER_BY_CONTINENT:
+			if (state.buscados.length === 0) {
+				const objetosFiltrados = state.countries.filter(
+					(objeto) => objeto.continente === action.payload
+				);
+				if (state.backUpCountries.length === 0) {
+					state.backUpCountries = [...state.countries];
+				}
+
+				return {
+					...state,
+					countries: [...objetosFiltrados],
+				};
+			}
 			if (state.backUpCountries.length === 0) {
 				state.backUpCountries = state.buscados;
 			}
@@ -142,12 +172,38 @@ export function rootReducer(state = initialState, action) {
 			};
 
 		case RESTORE_BUSCADOS:
+			if (state.backUpCountries.length === 0 && state.buscados.length === 0) {
+				return {
+					...state,
+					countries: [...state.countries],
+				};
+			}
 			return {
 				...state,
 				buscados: [...state.backUpCountries],
 			};
 
 		case ORDER_AZ:
+			if (state.buscados.length === 0) {
+				const arrayOrdenado = state.countries.sort((a, b) => {
+					const nombreA = a.nombre.toLowerCase();
+					const nombreB = b.nombre.toLowerCase();
+
+					if (nombreA < nombreB) {
+						return -1;
+					}
+					if (nombreA > nombreB) {
+						return 1;
+					}
+
+					return 0;
+				});
+
+				return {
+					...state,
+					countries: [...arrayOrdenado],
+				};
+			}
 			const arrayOrdenado = state.buscados.sort((a, b) => {
 				const nombreA = a.nombre.toLowerCase();
 				const nombreB = b.nombre.toLowerCase();
@@ -168,6 +224,26 @@ export function rootReducer(state = initialState, action) {
 			};
 
 		case ORDER_ZA:
+			if (state.buscados.length === 0) {
+				const arrayOrdenadoZa = state.countries.sort((a, b) => {
+					const nombreA = a.nombre.toLowerCase();
+					const nombreB = b.nombre.toLowerCase();
+
+					if (nombreA > nombreB) {
+						return -1;
+					}
+					if (nombreA < nombreB) {
+						return 1;
+					}
+
+					return 0;
+				});
+
+				return {
+					...state,
+					countries: [...arrayOrdenadoZa],
+				};
+			}
 			const arrayOrdenadoZa = state.buscados.sort((a, b) => {
 				const nombreA = a.nombre.toLowerCase();
 				const nombreB = b.nombre.toLowerCase();
@@ -188,6 +264,16 @@ export function rootReducer(state = initialState, action) {
 			};
 
 		case ORDER_MEN_MAY:
+			if (state.buscados.length === 0) {
+				const arrayOrdenadoMenMay = state.countries.sort(
+					(a, b) => a.poblacion - b.poblacion
+				);
+
+				return {
+					...state,
+					countries: [...arrayOrdenadoMenMay],
+				};
+			}
 			const arrayOrdenadoMenMay = state.buscados.sort(
 				(a, b) => a.poblacion - b.poblacion
 			);
@@ -197,6 +283,15 @@ export function rootReducer(state = initialState, action) {
 				buscados: [...arrayOrdenadoMenMay],
 			};
 		case ORDER_MAY_MEN:
+			if (state.buscados.length === 0) {
+				const arrayOrdenadoDescendente = state.countries.sort(
+					(a, b) => b.poblacion - a.poblacion
+				);
+				return {
+					...state,
+					countries: [...arrayOrdenadoDescendente],
+				};
+			}
 			const arrayOrdenadoDescendente = state.buscados.sort(
 				(a, b) => b.poblacion - a.poblacion
 			);

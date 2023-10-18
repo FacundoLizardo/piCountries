@@ -1,113 +1,93 @@
 .mainContainer {
-    font-family:Arial, Helvetica, sans-serif;
-    background-color: bisque;
-    margin: 15px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    border-style: solid;
-    border-color: black;
-    border-radius: 15px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-.Activity{
-    background-color: aquamarine;
-    border-style: solid;
-    border-color: black;
-    padding: 5px;
-    margin: 15px;
-    border-radius: 15px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: rgba(126, 126, 126, 0.7);
+	margin: 30px;
+	padding: 15px;
+	padding-top: 0px;
+	display: flex;
+	flex-direction: column;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 8px rgba(236, 236, 236, 0.4);
+	max-width: 1000px;
+	height: 80vh;
 }
 
-.Dificultad{
-    background-color: rgb(238, 246, 166);
-    border-style: solid;
-    border-color: black;
-    margin: 15px;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-.Duracion{
-    background-color: rgb(149, 245, 194);
-    border-style: solid;
-    border-color: black;
-    margin: 15px;
-    border-radius: 15px;
-    padding: 5px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+.label {
+	margin-right: 200px;
+
+	margin-left: 30px;
+	white-space: nowrap;
 }
 
-.Temporada{
-    background-color: rgb(245, 149, 149);
-    border-style: solid;
-    border-color: black;
-    margin: 15px;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-.search{
-  
-    background-color: rgb(252, 185, 109);
-    border-style: solid;
-    border-color: black;
-    margin: 15px;
-    padding: 8px;
-    border-radius: 15px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+.labelForm {
+	margin-right: 20px;
+	margin-left: 10px;
 
+	white-space: nowrap;
 }
 
-.searchCountries{
-    
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    height: auto;
-    max-width: 100%;;
-    border-style: solid;
-    border-color: black;
-    margin: 15px;
-    padding: 8px;
-    border-radius: 15px;
-   align-items: auto;
-   background-color: #737373;
-   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+.parrafo {
+	color: #ffffff;
+	margin-left: 30px;
+	text-transform: uppercase;
 }
 
+.search {
+	background-color: rgba(94, 123, 255, 0.2);
+	border-style: solid;
+	border-color: black;
+	margin: 15px;
+	padding: 8px;
+	border-radius: 3px;
+	margin-top: 0px;
+	border-width: 0px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	text-align: left;
+}
 
-.input{
+.searchCountries {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	height: 120px;
+	max-width: 100%;
+	overflow-y: scroll;
+	margin: 15px;
+	padding: 8px;
+	border-radius: 2px;
+	align-items: auto;
+	background-color: rgba(255, 255, 255, 0);
+	box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.5);
+}
 
-    border-radius: 5px;
-    margin: 5px;
-    padding: 5px;
+.input {
+	border-radius: 5px;
+	margin: 5px;
+	margin-right: 100vh;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	padding: 5px;
+	margin-left: 35px;
 }
 
 .customselect {
-    
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 200px;
-    appearance: none; 
-    transition: ease-in-out 1s; 
-    
-  }
-
-  .customselect option {
-    /* Personaliza el aspecto de las opciones */
-    background-color: #ffffff;
-    color: #000;
-  }
-
-  .customselect:focus {
-    
-    background-color: #007bff;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	width: 200px;
+	margin-right: 400px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	margin-left: 35px;
 }
 
-.span{
-    margin-left: 40px;
+.span {
+	margin-left: 40px;
+}
+
+.buttonSubmit {
+	margin-left: 118vh;
 }
